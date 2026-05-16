@@ -1,5 +1,7 @@
 import numpy as np
 
+print(np)
+
 def get_trend(prices):
     avg_price = np.mean(prices)
     current_price = prices[-1]
@@ -8,6 +10,9 @@ def get_trend(prices):
         return "Bullish", current_price - avg_price,
     else:
         return "Bearish" , avg_price - current_price
+    
+
+
 
 def get_volatility(prices):
     std_dev = np.std(prices)
@@ -40,7 +45,7 @@ def analyze_market(prices, news_bias = 0):
         "projected_state": projection
     }
 
-prices = [100, 102, 101, 105, 110]
+prices = [100, 102, 101, 105, 120]
 result = analyze_market(prices, news_bias = 0 )
 
 print(result)
